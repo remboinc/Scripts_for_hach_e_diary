@@ -18,7 +18,7 @@ def create_commendation(schoolkid, lesson):
     subject = Subject.objects.get(title=lesson, year_of_study=6)
     lesson_object = Lesson.objects.filter(
         subject=subject,
-        group_letter='А').order_by('?').first()
+        group_letter=schoolkid.group_letter).order_by('?').first()
     date = lesson_object.date
     teacher_info = lesson_object.teacher
     teacher_full_name = teacher_info.full_name
